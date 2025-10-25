@@ -1,0 +1,13 @@
+# Archivos de compilación y temporales
+target/
+*.log
+*.class
+
+# Configuraciones locales
+.idea/
+.vscode/
+*.iml
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
