@@ -1,0 +1,13 @@
+package pe.senatinos.nach.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class TestController {
+
+    @GetMapping("/")
+    public String home() {
+        return "✅ Servidor funcionando correctamente en NACH backend!";
+    }
+}
