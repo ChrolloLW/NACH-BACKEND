@@ -1,4 +1,4 @@
-package pe.senatinos.nach.controller;
+package pe.nach.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

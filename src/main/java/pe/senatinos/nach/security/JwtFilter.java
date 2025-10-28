@@ -1,4 +1,4 @@
-package pe.senatinos.nach.security;
+package pe.nach.security;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

@@ -6,7 +6,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>pe.senatinos.nach</groupId>
+  <groupId>pe.nach</groupId>
   <artifactId>imsys-backend</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>

@@ -1,4 +1,4 @@
-package pe.senatinos.nach.security;
+package pe.nach.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

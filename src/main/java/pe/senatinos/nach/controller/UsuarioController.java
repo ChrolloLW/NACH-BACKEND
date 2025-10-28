@@ -1,11 +1,11 @@
-package pe.senatinos.nach.controller;
+package pe.nach.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-import pe.senatinos.nach.model.Usuario;
-import pe.senatinos.nach.repository.UsuarioRepository;
+import pe.nach.model.Usuario;
+import pe.nach.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("/api/usuarios")
@@ -22,7 +22,8 @@ public class UsuarioController {
 
     // GET /api/usuarios/{id}
     @GetMapping("/{id}")
-    public Usuario obtenerUsuario(@PathVariable Integer id) {
+    public Usuario obtenerUsuario(@PathVariable Long id) {
         return usuarioRepository.findById(id).orElse(null);
-    }
+}
+
 }

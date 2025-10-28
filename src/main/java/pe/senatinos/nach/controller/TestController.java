@@ -1,4 +1,4 @@
-package pe.senatinos.nach.controller;
+package pe.nach.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,8 +1,8 @@
-package pe.senatinos.nach.controller;
+package pe.nach.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pe.senatinos.nach.model.Info; // ✅ el import va aquí, junto a los otros
+import pe.nach.model.Info; // ✅ el import va aquí, junto a los otros
 
 @RestController
 public class HolaController {

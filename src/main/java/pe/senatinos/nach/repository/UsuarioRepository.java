@@ -1,9 +1,11 @@
-package pe.senatinos.nach.repository;
+package pe.nach.repository;
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import pe.senatinos.nach.model.Usuario;
+import pe.nach.model.Usuario;
+import java.util.Optional;
 
-@Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
+Optional<Usuario> findByNombreUsuarioAndPasswordAndActivo(String nombreUsuario, String password, Integer activo);
 }

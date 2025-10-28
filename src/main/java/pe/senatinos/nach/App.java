@@ -1,4 +1,4 @@
-package pe.senatinos.nach;
+package pe.nach;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

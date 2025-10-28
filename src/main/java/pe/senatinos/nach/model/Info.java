@@ -1,4 +1,4 @@
-package pe.senatinos.nach.model;
+package pe.nach.model;
 
 public class Info {
     private String nombre;

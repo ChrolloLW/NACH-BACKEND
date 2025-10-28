@@ -1,4 +1,4 @@
-package pe.senatinos.nach;
+package pe.nach;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
