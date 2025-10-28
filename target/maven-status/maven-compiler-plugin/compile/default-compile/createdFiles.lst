@@ -1,8 +1,14 @@
+pe\senatinos\nach\config\SecurityConfig.class
+pe\senatinos\nach\controller\AuthController$LoginRequest.class
+pe\senatinos\nach\controller\AuthController.class
+pe\senatinos\nach\security\JwtFilter.class
+pe\senatinos\nach\controller\HolaController.class
+pe\senatinos\nach\controller\TestController.class
+pe\senatinos\nach\controller\UsuarioController.class
 pe\senatinos\nach\model\Info.class
 pe\senatinos\nach\repository\UsuarioRepository.class
+pe\senatinos\nach\service\AuthService.class
 pe\senatinos\nach\App.class
-pe\senatinos\nach\controller\HolaController.class
 pe\senatinos\nach\controller\TestDBController.class
-pe\senatinos\nach\controller\TestController.class
 pe\senatinos\nach\model\Usuario.class
-pe\senatinos\nach\controller\UsuarioController.class
+pe\senatinos\nach\security\JwtUtil.class
