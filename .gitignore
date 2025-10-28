@@ -1,0 +1,84 @@
+# ============================================================
+# 🧱 BACKEND NACH - SPRING BOOT / MAVEN
+# ============================================================
+
+# --- Carpetas de compilación y dependencias ---
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+.mvn/
+.classpath
+.project
+.settings/
+.idea/
+.vscode/
+
+# --- Archivos de logs y temporales ---
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# --- Sistema operativo ---
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# --- Archivos de entorno y credenciales ---
+# (⚠️ Agrega aquí tus properties privados si los usas solo localmente)
+application-local.properties
+application-dev.properties
+application-test.properties
+.env
+.env.*
+
+# --- IntelliJ IDEA / Eclipse metadata ---
+*.iml
+*.ipr
+*.iws
+.idea/
+*.launch
+
+# --- Archivos Maven / Java ---
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+replay_pid*
+dependency-reduced-pom.xml
+
+# --- Tests y coverage ---
+/surefire-reports/
+/jacoco/
+test-output/
+reports/
+
+# --- Archivos temporales del editor ---
+*.code-workspace
+*.history/
+*.cache/
+*.tmp/
+*.log
+
+# --- Node / Frontend dentro del backend (por si integras admin UI) ---
+node_modules/
+dist/
+build/
+
+# --- Otros específicos ---
+/bin/
+/out/
+/logs/
