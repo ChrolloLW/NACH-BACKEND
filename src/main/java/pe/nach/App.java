@@ -3,10 +3,10 @@ package pe.nach;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "pe.nach")
 public class App {
     public static void main(String[] args) {
         SpringApplication.run(App.class, args);
-        System.out.println("🚀 Servidor NACH corriendo en http://localhost:8080");
+        System.out.println("✅ Servidor NACH corriendo en http://localhost:8080");
     }
 }

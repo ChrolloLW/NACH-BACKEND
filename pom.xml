@@ -7,13 +7,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>pe.nach</groupId>
-  <artifactId>imsys-backend</artifactId>
+  <artifactId>nach-backend</artifactId>
   <version>1.0.0</version>
   <packaging>jar</packaging>
-  <name>imsys-backend</name>
-  <description>Backend del sistema IMSYS basado en Spring Boot</description>
 
-  <!-- SPRING BOOT PARENT -->
+  <name>nach-backend</name>
+  <description>Backend del sistema NACH (evolución de IMSYS) basado en Spring Boot 3.3.3</description>
+
+  <!-- PARENT SPRING BOOT -->
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -23,29 +24,32 @@
 
   <properties>
     <java.version>21</java.version>
+    <jjwt.version>0.11.5</jjwt.version>
+    <lombok.version>1.18.32</lombok.version>
+    <mysql.version>8.0.33</mysql.version>
   </properties>
 
   <dependencies>
-    <!-- Core Web (REST + Tomcat embebido) -->
+    <!-- 🌐 Core Web (REST + Tomcat embebido) -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <!-- JPA / Hibernate -->
+    <!-- 🧩 JPA / Hibernate -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
 
-    <!-- MySQL -->
+    <!-- 💾 MySQL -->
     <dependency>
       <groupId>com.mysql</groupId>
       <artifactId>mysql-connector-j</artifactId>
-      <version>8.0.33</version>
+      <version>${mysql.version}</version>
     </dependency>
 
-    <!-- JDBC Pool (Hikari) -->
+    <!-- ⚡ JDBC Pool (Hikari) -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jdbc</artifactId>
@@ -61,26 +65,26 @@
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-api</artifactId>
-      <version>0.11.5</version>
+      <version>${jjwt.version}</version>
     </dependency>
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-impl</artifactId>
-      <version>0.11.5</version>
+      <version>${jjwt.version}</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
       <groupId>io.jsonwebtoken</groupId>
       <artifactId>jjwt-jackson</artifactId>
-      <version>0.11.5</version>
+      <version>${jjwt.version}</version>
       <scope>runtime</scope>
     </dependency>
 
-    <!-- 🧰 Lombok (para @RequiredArgsConstructor, @Getter, etc.) -->
+    <!-- 🧰 Lombok -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.18.32</version>
+      <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
 
@@ -94,9 +98,32 @@
 
   <build>
     <plugins>
+      <!-- Spring Boot Plugin -->
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+      <!-- Compiler plugin (Java 21) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+        <configuration>
+          <release>21</release>
+          <encoding>UTF-8</encoding>
+          <compilerArgs>
+            <arg>-parameters</arg>
+          </compilerArgs>
+        </configuration>
       </plugin>
     </plugins>
   </build>
