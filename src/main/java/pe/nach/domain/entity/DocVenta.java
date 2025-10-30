@@ -95,8 +95,9 @@ public class DocVenta {
     @Column(name = "Id_Catalogo_Detalle_Moneda")
     private Integer idCatalogoDetalleMoneda;
 
-    @Column(name = "Id_Tipo_Cambio")
-    private Integer idTipoCambio;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id_Tipo_Cambio")
+    private TipoCambio tipoCambio;
 
     @Column(name = "Tipo_Cambio", precision = 25, scale = 15)
     private BigDecimal tipoCambioValor;

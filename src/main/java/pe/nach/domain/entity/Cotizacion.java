@@ -69,8 +69,9 @@ public class Cotizacion {
     @Column(name = "Id_Catalogo_Moneda")
     private Integer idCatalogoMoneda;
 
-    @Column(name = "Id_Tipo_Cambio")
-    private Integer idTipoCambio;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Id_Tipo_Cambio")
+    private TipoCambio tipoCambio;
 
     @Column(name = "Tipo_Cambio", precision = 10, scale = 4)
     private BigDecimal tipoCambioValor;
