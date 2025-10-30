@@ -7,8 +7,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import pe.nach.model.Usuario;
-import pe.nach.repository.UsuarioRepository;
+import pe.nach.domain.entity.Usuario;
+import pe.nach.domain.repository.UsuarioRepository;
+import pe.nach.infrastructure.security.JwtService;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +34,7 @@ public class AuthService {
         }
 
         // 3️⃣ Validar que esté activo
-        if (usuario.getActivo() != null && usuario.getActivo() == 0) {
+        if (usuario.getActivo() == null || usuario.getActivo() != 1) {
             throw new RuntimeException("Usuario inactivo");
         }
 

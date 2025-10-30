@@ -8,7 +8,7 @@ import java.security.Key;
 
 @Component
 public class JwtUtil {
-    private static final Key key = Keys.hmacShaKeyFor("imsys_super_secure_secret_key_2025".getBytes());
+    private static final Key key = Keys.hmacShaKeyFor("nach_secure_jwt_key_2025_super_secret_and_very_long_key_for_hmac_sha256".getBytes());
     private static final long EXPIRATION_MS = 1000 * 60 * 60; // 1 hora
 
     public String generateToken(String username) {

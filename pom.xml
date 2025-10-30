@@ -12,7 +12,7 @@
   <packaging>jar</packaging>
 
   <name>nach-backend</name>
-  <description>Backend del sistema NACH (evolución de IMSYS) basado en Spring Boot 3.3.3</description>
+  <description>Backend del sistema NACH basado en Spring Boot 3.3.3</description>
 
   <!-- PARENT SPRING BOOT -->
   <parent>
@@ -85,7 +85,7 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>${lombok.version}</version>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
 
     <!-- 🧪 Tests -->

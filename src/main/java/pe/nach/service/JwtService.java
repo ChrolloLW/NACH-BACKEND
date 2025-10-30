@@ -6,7 +6,6 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Date;
@@ -14,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-@Service
-public class JwtService {
+// Legacy implementation retained for reference. Not a Spring bean to avoid conflicts with the canonical JwtService.
+class LegacyJwtServiceDisabled {
 
     private static final String SECRET_KEY = "6C5970337336763979244226452948404D635166546A576E5A723475377821412";
 

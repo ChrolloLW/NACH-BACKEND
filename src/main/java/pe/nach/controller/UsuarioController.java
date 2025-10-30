@@ -22,7 +22,7 @@ public class UsuarioController {
   }
 
   @GetMapping("/{id}")
-  public ResponseEntity<UsuarioDTO> obtener(@PathVariable Long id) {
+  public ResponseEntity<UsuarioDTO> obtener(@PathVariable Integer id) {
     return ResponseEntity.ok(service.obtener(id));
   }
 
@@ -36,7 +36,7 @@ public class UsuarioController {
   }
 
   @PutMapping("/{id}")
-  public ResponseEntity<UsuarioDTO> actualizar(@PathVariable Long id, @RequestBody Map<String,Object> body) {
+  public ResponseEntity<UsuarioDTO> actualizar(@PathVariable Integer id, @RequestBody Map<String,Object> body) {
     String nombreUsuario = (String) body.get("nombreUsuario");
     Integer activo = (Integer) body.get("activo");
     Integer admin = (Integer) body.get("adminSistema");
@@ -44,13 +44,13 @@ public class UsuarioController {
   }
 
   @PatchMapping("/{id}/password")
-  public ResponseEntity<?> cambiarPassword(@PathVariable Long id, @RequestBody Map<String,String> body) {
+  public ResponseEntity<?> cambiarPassword(@PathVariable Integer id, @RequestBody Map<String,String> body) {
     service.cambiarPassword(id, body.get("password"));
     return ResponseEntity.ok().build();
   }
 
   @DeleteMapping("/{id}")
-  public ResponseEntity<?> eliminar(@PathVariable Long id) {
+  public ResponseEntity<?> eliminar(@PathVariable Integer id) {
     service.eliminar(id);
     return ResponseEntity.noContent().build();
   }

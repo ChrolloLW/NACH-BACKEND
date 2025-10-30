@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
 import pe.nach.dto.UsuarioDTO;
-import pe.nach.model.Usuario;
-import pe.nach.repository.UsuarioRepository;
+import pe.nach.domain.entity.Usuario;
+import pe.nach.domain.repository.UsuarioRepository;
 import pe.nach.service.mapper.UsuarioMapper;
 
 @Service
@@ -23,7 +23,7 @@ public class UsuarioService {
     return list.stream().map(UsuarioMapper::toDto).collect(Collectors.toList());
   }
 
-  public UsuarioDTO obtener(Long id) {
+  public UsuarioDTO obtener(Integer id) {
     var u = repo.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     return UsuarioMapper.toDto(u);
   }
@@ -38,7 +38,7 @@ public class UsuarioService {
     return UsuarioMapper.toDto(saved);
   }
 
-  public UsuarioDTO actualizar(Long id, String nombreUsuario, Integer activo, Integer adminSistema) {
+  public UsuarioDTO actualizar(Integer id, String nombreUsuario, Integer activo, Integer adminSistema) {
     var u = repo.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     if (nombreUsuario != null) u.setNombreUsuario(nombreUsuario);
     if (activo != null) u.setActivo(activo);
@@ -46,13 +46,13 @@ public class UsuarioService {
     return UsuarioMapper.toDto(repo.save(u));
   }
 
-  public void cambiarPassword(Long id, String newPassword) {
+  public void cambiarPassword(Integer id, String newPassword) {
     var u = repo.findById(id).orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
     u.setPassword(encoder.encode(newPassword));
     repo.save(u);
   }
 
-  public void eliminar(Long id) {
+  public void eliminar(Integer id) {
     repo.deleteById(id); // si prefieres soft delete, cambia por setActivo(0)
   }
 }

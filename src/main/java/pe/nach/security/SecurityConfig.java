@@ -13,35 +13,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import lombok.RequiredArgsConstructor;
 
-@Configuration
-@EnableWebSecurity
-@RequiredArgsConstructor
-public class SecurityConfig {
-
-  private final JwtFilter jwtFilter;
-
-  @Bean
-  public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-    http
-      .csrf(csrf -> csrf.disable())
-      .authorizeHttpRequests(auth -> auth
-        .requestMatchers("/api/login").permitAll()
-        .requestMatchers("/api/public/**").permitAll()
-        .requestMatchers("/api/usuarios/**").permitAll() // cambia a .hasRole("ADMIN") si quieres protegerlo
-        .anyRequest().authenticated()
-      )
-      .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
-
-    return http.build();
-  }
-
-  @Bean
-  public AuthenticationManager authenticationManager(AuthenticationConfiguration config) throws Exception {
-    return config.getAuthenticationManager();
-  }
-
-  @Bean
-  public PasswordEncoder passwordEncoder() {
-    return new BCryptPasswordEncoder();
-  }
+// Legacy SecurityConfig (disabled)
+class LegacySecurityConfigPlaceholder {
+    // This class intentionally left blank. The active security configuration lives in pe.nach.infrastructure.config.SecurityConfig
 }

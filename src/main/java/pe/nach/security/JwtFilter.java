@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-import pe.nach.service.JwtService;
-import pe.nach.service.CustomUserDetailsService;
+import pe.nach.infrastructure.security.JwtService;
+import pe.nach.infrastructure.security.CustomUserDetailsService;
 
 import java.io.IOException;
 
