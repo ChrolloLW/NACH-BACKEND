@@ -7,12 +7,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class RegisterRequest {
     private String username;
     private String password;
     private String email;
-    private String nombres;
-    private String apellidos;
+    private Integer idCompania;
+    private Integer idLocal;
+    private Boolean adminSistema;
+    private Boolean activo;
 }

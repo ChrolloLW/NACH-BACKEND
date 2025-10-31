@@ -9,7 +9,7 @@ import pe.nach.infrastructure.security.JwtService;
 import pe.nach.security.dto.AuthRequest;
 import pe.nach.security.dto.AuthResponse;
 import pe.nach.security.dto.RegisterRequest;
-import pe.nach.domain.entity.Usuario;
+import pe.nach.domain.entity.usuario.Usuario;
 import pe.nach.domain.repository.UsuarioRepository;
 
 import java.time.LocalDateTime;
